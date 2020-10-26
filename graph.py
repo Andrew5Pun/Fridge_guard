@@ -30,9 +30,14 @@ temperatureDir = "TemperatureReading" + probe_id + ".html"
 # change directory
 os.system("cd " + WDir)
 
+filePath = os.path.join(WDir, user_id)
+
+print(filePath)
+
 # if user_id does not exist then create directory
-if not os.path.exists(user_id):
-    os.makedirs(user_id)
+if not os.path.exists(filePath):
+    os.makedirs(filePath)
+    print("created directory " + filePath + " successfully")
 
 # path of file to write to
 filePath = os.path.join(WDir, user_id, temperatureDir)
